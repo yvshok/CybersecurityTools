@@ -1,0 +1,55 @@
+${LSCOLORS:1:1}
+${LSCOLORS:2:1}
+${LSCOLORS:3:1}
+${LSCOLORS:4:1}
+${LSCOLORS:5:1}
+${LSCOLORS:6:1}
+${LSCOLORS:7:1}
+${LSCOLORS:8:1}
+${LSCOLORS:9:1}
+${LSCOLORS:1:2}
+${LSCOLORS:2:2}
+${LSCOLORS:3:2}
+${LSCOLORS:4:2}
+${LSCOLORS:5:2}
+${LSCOLORS:6:2}
+${LSCOLORS:7:2}
+${LSCOLORS:8:2}
+${LSCOLORS:9:2}
+${LSCOLORS:1:3}
+${LSCOLORS:2:3}
+${LSCOLORS:3:3}
+${LSCOLORS:4:3}
+${LSCOLORS:5:3}
+${LSCOLORS:6:3}
+${LSCOLORS:7:3}
+${LSCOLORS:8:3}
+${LSCOLORS:9:3}
+
+# ${LSCOLORS:1:1} : x
+# ${LSCOLORS:2:1} : f
+# ${LSCOLORS:3:1} : x
+# ${LSCOLORS:4:1} : c
+# ${LSCOLORS:5:1} : x
+# ${LSCOLORS:6:1} : d
+# ${LSCOLORS:7:1} : x
+# ${LSCOLORS:8:1} : b
+# ${LSCOLORS:9:1} : x
+# ${LSCOLORS:1:2} : xf
+# ${LSCOLORS:2:2} : fx
+# ${LSCOLORS:3:2} : xc
+# ${LSCOLORS:4:2} : cx
+# ${LSCOLORS:5:2} : xd
+# ${LSCOLORS:6:2} : dx
+# ${LSCOLORS:7:2} : xb
+# ${LSCOLORS:8:2} : bx
+# ${LSCOLORS:9:2} : xe
+# ${LSCOLORS:1:3} : xfx
+# ${LSCOLORS:2:3} : fxc
+# ${LSCOLORS:3:3} : xcx
+# ${LSCOLORS:4:3} : cxd
+# ${LSCOLORS:5:3} : xdx
+# ${LSCOLORS:6:3} : dxb
+# ${LSCOLORS:7:3} : xbx
+# ${LSCOLORS:8:3} : bxe
+# ${LSCOLORS:9:3} : xeg

